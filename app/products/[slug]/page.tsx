@@ -1,6 +1,7 @@
+import DetailPage from '@/app/components/DetailPage'
 import React from 'react'
 
-export default async function DetailsPage({ params }: { params: { slug: string } }) {
+export default async function SingleDetailsPage({ params }: { params: { slug: string } }) {
 
   const { slug } = await params
 
@@ -9,10 +10,9 @@ export default async function DetailsPage({ params }: { params: { slug: string }
   )
   const data = await res.json()
 
-
   return (
-    <div>
-
+    <div className='lg:mx-32 mx-5'>
+      <DetailPage singleData={data.data} />
     </div>
   )
 }

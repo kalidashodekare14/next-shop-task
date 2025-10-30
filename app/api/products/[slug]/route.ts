@@ -7,9 +7,9 @@ import { ObjectId } from "mongodb";
 export async function GET(request: Request, { params }: { params: { slug: string } }) {
     try {
         await connectDB();
-        const { slug } = params;
-        const findProduct = { _id: new ObjectId(slug) }
-        const product = await Product.findOne(findProduct);
+        const { slug } = await params;
+        const query = { _id: new ObjectId(slug) }
+        const product = await Product.findOne(query);
         return NextResponse.json({
             success: true,
             data: product

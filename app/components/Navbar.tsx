@@ -16,12 +16,24 @@ const Navbar = () => {
             "name": "Home",
             "path": "/"
         },
-    
+        {
+            "id": 2,
+            "name": "Dasboard",
+            "path": "/dashboard"
+        },
+        {
+            "id": 3,
+            "name": "Admin",
+            "path": "/admin"
+        },
+
     ]
 
     const handleToggle = () => {
         setToggle(!toggle)
     }
+
+
 
     return (
         <div className={` ${isSticky ? "sticky top-0 z-50 bg-[#ffffffb9] dark:bg-[#0d1b2aab]  shadow-xl backdrop-blur-lg transition-all duration-300 opacity-100" : "bg-white dark:bg-[#0d1b2a]"}`}>
