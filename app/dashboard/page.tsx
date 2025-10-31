@@ -1,9 +1,10 @@
-import React from 'react';
-import DashboardPage from '../components/DashboardPage'
+import DashboardPage from '@/components/Pages/DashboardPage';
+
+export const dynamic= "force-dynamic";
 
 const MainDashboard = async () => {
 
-    const res = await fetch("http://localhost:3000/api/products", {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
         next: { revalidate: 60 },
     })
     const products = await res.json();

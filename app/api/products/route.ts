@@ -18,6 +18,7 @@ export async function GET() {
 export async function POST(request: any) {
     const productData = await request.json();
     console.log('checking insert data', productData);
+    
     try {
         await connectDB();
         const saveData = await Product.create(productData)

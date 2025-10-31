@@ -15,14 +15,14 @@ type Product = {
 const HomePage = ({ products }: { products: Product[] }) => {
 
 
-    
+
 
     return (
         <div>
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
                 {
                     products.map(product => (
-                        <div className="border p-2 space-y-2">
+                        <div key={product._id} className="border p-2 space-y-2">
                             <div className="flex justify-center items-center">
                                 <img className="w-32" src={product.image} alt="" />
                             </div>

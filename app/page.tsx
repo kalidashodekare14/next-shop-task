@@ -1,8 +1,9 @@
-import HomePage from './components/HomePage';
+import HomePage from '../components/Pages/HomePage';
 
+export const dynamic= "force-dynamic";
 
 export default async function Home() {
-  const res = await fetch("http://localhost:3000/api/products", {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/products`, {
     next: { revalidate: 60 },
   })
 
